@@ -1,0 +1,282 @@
+<div
+  [style.display]="showModal ? 'block' : 'none'"
+  class="modal"
+  id="imagemodal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Post New Car</h4>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="PostCarForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <div class="form-group col-md-12 ">
+                  <label for="carmodel">Car Model </label>
+                  <select
+                    id="carmodel"
+                    ngModel
+                    name="carmodel"
+                    formControlName="carmodel"
+                    class="form-control"
+                  >
+                    <!-- <div *ngIf="f.carmodel.errors.required">Car Model is required</div> -->
+                    <option selected>Choose...</option>
+                    <option
+                      *ngFor="let name of carName"
+                      [value]="name.carNameId"
+                      >{{ name.type }}</option
+                    >
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <div class="form-group">
+                <div class="form-group col-md-12 ">
+                  <label for="color">Color </label>
+                  <select
+                    id="color"
+                    name="color"
+                    ngModel
+                    formControlName="color"
+                    class="form-control"
+                  >
+                    <option selected>Choose...</option>
+                    <option
+                      style="color: cornsilk;"
+                      *ngFor="let color of colors"
+                      [value]="color"
+                      [style.backgroundColor]="true ? color : 'White'"
+                      >{{ color }}</option
+                    >
+                    <!-- <div *ngIf="f.color.errors.required">Color is required</div> -->
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+               <div class="form-group">
+                 <div class="form-group col-md-12 ">
+                   <label for="carmodel">Years </label>
+                   <select
+                     id="years"
+                     ngModel
+                     name="years"
+                     formControlName="years"
+                     class="form-control"
+                   >
+                     <!-- <div *ngIf="f.carmodel.errors.required">Car Model is required</div> -->
+                     <option selected>Choose...</option>
+                     <option
+                       *ngFor="let year of years"
+                       [value]="year"
+                       >{{ year }}</option
+                     >
+                   </select>
+                 </div>
+               </div>
+             </div>
+
+
+            <div class="form-group col-md-12">
+              <label for="inputState">Upload Picture </label>
+              <div class="input-group mb-12">
+                <div class="custom-file">
+                  <input
+                    type="file"
+                    formControlName="picture"
+                    name="picture"
+                    class="custom-file-input"
+                    id="picture"
+                    (change)="onFileSelected($event)"
+                  />
+                  <label class="custom-file-label" for="inputGroupFile01"
+                    >Choose Picture</label
+                  >
+                  <!-- <div *ngIf="f.picture.errors.required">Picture is required</div> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-md-12 ">
+              <label for="inputState"> Doors </label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend"></div>
+                <div class="custom-file">
+                  <input
+                    type="number"
+                    formControlName="doors"
+                    id="doors"
+                    name="doors"
+                    class="form-control"
+                    placeholder="Number"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-md-12 ">
+              <label for="inputState">Price </label>
+              <div class="input-group mb-5">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"> E£ </span>
+                </div>
+                <input
+                  type="text"
+                  formControlName="price"
+                  name="price"
+                  class="form-control"
+                  aria-label="Amount (to the nearest dollar)"
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="form-group col-md-5 custom-control custom-checkbox custom-control-inline"
+            >
+              <input
+                type="checkbox"
+                formControlName="AirBag"
+                name="AirBag"
+                class="custom-control-input"
+                id="customer"
+              />
+              <label class="custom-control-label" for="customer"> AirBag</label>
+            </div>
+
+            <div
+              class="form-group col-md-5 custom-control custom-checkbox custom-control-inline"
+            >
+              <input
+                type="checkbox"
+                name="BabySeat"
+                formControlName="BabySeat"
+                class="custom-control-input"
+                id="custom"
+              />
+              <label class="custom-control-label" for="custom"> BabySeat</label>
+            </div>
+
+            <div
+              class="form-group col-md-5 custom-control custom-checkbox custom-control-inline"
+            >
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="customCheckDi"
+                name="Gas"
+                formControlName="Gas"
+              />
+              <label class="custom-control-label" for="customCheckDi">
+                Gas</label
+              >
+            </div>
+
+            <div
+              class="form-group col-md-5 custom-control custom-checkbox custom-control-inline"
+            >
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="customCheckDis"
+                name="CDPlayer"
+                formControlName="CDPlayer"
+              />
+              <label class="custom-control-label" for="customCheckDis">
+                CDPlayer</label
+              >
+            </div>
+
+            <div
+              class="form-group col-md-5 custom-control custom-checkbox custom-control-inline"
+            >
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                name="AirCondition"
+                id="customCheckDisa"
+                formControlName="AirCondition"
+              />
+              <label class="custom-control-label" for="customCheckDisa">
+                AirCondition</label
+              >
+            </div>
+
+            <div
+              class="form-group col-md-5 custom-control custom-checkbox custom-control-inline"
+            >
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                name="SunRoof"
+                id="customCheckDisab"
+                formControlName="SunRoof"
+              />
+              <label class="custom-control-label" for="customCheckDisab">
+                SunRoof</label
+              >
+            </div>
+
+            <div
+              class="form-group col-md-5 custom-control custom-checkbox custom-control-inline"
+            >
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                name="SpareWheel"
+                id="customCheckDisabl"
+                formControlName="SpareWheel"
+              />
+              <label class="custom-control-label" for="customCheckDisabl">
+                SpareWheel</label
+              >
+            </div>
+
+            <div
+              class="form-group col-md-5 custom-control custom-checkbox custom-control-inline"
+            >
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="customCheckDisable"
+                name="Driver"
+                formControlName="Driver"
+              />
+              <label class="custom-control-label" for="customCheckDisable">
+                Driver</label
+              >
+            </div>
+
+            <div>
+              <button type="submit" class="btn btn-success">
+                Post New Car
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-dismiss="modal"
+          (click)="hide()"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
