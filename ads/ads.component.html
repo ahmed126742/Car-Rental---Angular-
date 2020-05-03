@@ -1,0 +1,309 @@
+<!-- ________________________Latest Cars ../../assets/image Thumbnail________________-->
+<div class="grid">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"
+    *ngFor="let card of FirstInitData"
+    >
+      <div class="txthover">
+        <img src={{card.picture}} alt="car1" />
+        <div class="txtcontent">
+          <div class="stars">
+            <div class="glyphicon glyphicon-star"></div>
+            <div class="glyphicon glyphicon-star"></div>
+            <div class="glyphicon glyphicon-star"></div>
+          </div>
+          <div class="simpletxt">
+            <h3 class="name" style="font-size: xx-large;">{{card.firstname}} {{card.lastname}}</h3>
+            <p style="font-size: x-large;">
+              {{card.carname}}<br />
+              {{card.year}}
+            </p>
+            <h4 class="price" style="font-size: large;">{{card.price}} Egp</h4>
+            <button (click)="showReadMore(card.vehicleId)" data-toggle="imagemodal">READ MORE</button><br />
+            <div class="wishtxt">
+              <p class="paragraph1">
+                Add to Wishlist
+                <span class="glyphicon glyphicon-heart"></span>
+              </p>
+              <p class="paragraph2">
+                Compare
+                <span class="icon"><img src="../../assets/image/compicon.png" alt="compicon" /></span>
+              </p>
+            </div>
+          </div>
+          <div class="stars2">
+            <div class="glyphicon glyphicon-star"></div>
+            <div class="glyphicon glyphicon-star"></div>
+            <div class="glyphicon glyphicon-star"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
+        <div class="txthover">
+          <img src="../../assets/image/car2.jpg" alt="car2" />
+          <div class="txtcontent">
+            <div class="stars">
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+            </div>
+            <div class="simpletxt">
+              <h3 class="name">Renault</h3>
+              <p>
+                "Lorem ipsum dolor sit amet, consectetur,<br />
+                sed do eiusmod tempor incididunt"
+              </p>
+              <h4 class="price">900 &euro;</h4>
+              <button (click)="showReadMore()"  data-toggle="imagemodal" >READ MORE</button><br />
+              <div class="wishtxt">
+                <p class="paragraph1">
+                  Add to Wishlist
+                  <span class="glyphicon glyphicon-heart"></span>
+                </p>
+                <p class="paragraph2">
+                  Compare
+                  <span class="icon"
+                    ><img src="../../assets/image/compicon.png" alt="compicon"
+                  /></span>
+                </p>
+              </div>
+            </div>
+            <div class="stars2">
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="txthover">
+          <img src="../../assets/image/car3.jpg" alt="car3" />
+          <div class="txtcontent">
+            <div class="stars">
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+            </div>
+            <div class="simpletxt">
+              <h3 class="name">Ford Mustang</h3>
+              <p>
+                "Lorem ipsum dolor sit amet, consectetur,<br />
+                sed do eiusmod tempor incididunt"
+              </p>
+              <h4 class="price">3000 &euro;</h4>
+              <button (click)="showReadMore()"  data-toggle="imagemodal" >READ MORE</button><br />
+              <div class="wishtxt">
+                <p class="paragraph1">
+                  Add to Wishlist
+                  <span class="glyphicon glyphicon-heart"></span>
+                </p>
+                <p class="paragraph2">
+                  Compare
+                  <span class="icon"
+                    ><img src="../../assets/image/compicon.png" alt="compicon"
+                  /></span>
+                </p>
+              </div>
+            </div>
+            <div class="stars2">
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="txthover">
+          <img src="../../assets/image/car4.jpg" alt="car4" />
+          <div class="txtcontent">
+            <div class="stars">
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+            </div>
+            <div class="simpletxt">
+              <h3 class="name">Rover</h3>
+              <p>
+                "Lorem ipsum dolor sit amet, consectetur,<br />
+                sed do eiusmod tempor incididunt"
+              </p>
+              <h4 class="price">1000 &euro;</h4>
+              <button (click)="showReadMore()"  data-toggle="imagemodal" >READ MORE</button><br />
+              <div class="wishtxt">
+                <p class="paragraph1">
+                  Add to Wishlist
+                  <span class="glyphicon glyphicon-heart"></span>
+                </p>
+                <p class="paragraph2">
+                  Compare
+                  <span class="icon"
+                    ><img src="../../assets/image/compicon.png" alt="compicon"
+                  /></span>
+                </p>
+              </div>
+            </div>
+            <div class="stars2">
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="txthover">
+          <img src="../../assets/image/car5.jpg" alt="car5" />
+          <div class="txtcontent">
+            <div class="stars">
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+            </div>
+            <div class="simpletxt">
+              <h3 class="name">Porche</h3>
+              <p>
+                "Lorem ipsum dolor sit amet, consectetur,<br />
+                sed do eiusmod tempor incididunt"
+              </p>
+              <h4 class="price">1200 &euro;</h4>
+              <button (click)="showReadMore()"  data-toggle="imagemodal" >READ MORE</button><br />
+              <div class="wishtxt">
+                <p class="paragraph1">
+                  Add to Wishlist
+                  <span class="glyphicon glyphicon-heart"></span>
+                </p>
+                <p class="paragraph2">
+                  Compare
+                  <span class="icon"
+                    ><img src="../../assets/image/compicon.png" alt="compicon"
+                  /></span>
+                </p>
+              </div>
+            </div>
+            <div class="stars2">
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="txthover">
+          <img src="../../assets/image/car6.jpg" alt="car6" />
+          <div class="txtcontent">
+            <div class="stars">
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+            </div>
+            <div class="simpletxt">
+              <h3 class="name">Porche 911</h3>
+              <p>
+                "Lorem ipsum dolor sit amet, consectetur,<br />
+                sed do eiusmod tempor incididunt"
+              </p>
+              <h4 class="price">4000 &euro;</h4>
+              <button (click)="showReadMore()"  data-toggle="imagemodal" >READ MORE</button><br />
+              <div class="wishtxt">
+                <p class="paragraph1">
+                  Add to Wishlist
+                  <span class="glyphicon glyphicon-heart"></span>
+                </p>
+                <p class="paragraph2">
+                  Compare
+                  <span class="icon"
+                    ><img src="../../assets/image/compicon.png" alt="compicon"
+                  /></span>
+                </p>
+              </div>
+            </div>
+            <div class="stars2">
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="txthover">
+          <img src="../../assets/image/car7.jpg" alt="car7" />
+          <div class="txtcontent">
+            <div class="stars">
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+            </div>
+            <div class="simpletxt">
+              <h3 class="name">Chevrolet SS</h3>
+              <p>
+                "Lorem ipsum dolor sit amet, consectetur,<br />
+                sed do eiusmod tempor incididunt"
+              </p>
+              <h4 class="price">3000 &euro;</h4>
+              <button (click)="showReadMore()"  data-toggle="imagemodal" >READ MORE</button><br />
+              <div class="wishtxt">
+                <p class="paragraph1">
+                  Add to Wishlist
+                  <span class="glyphicon glyphicon-heart"></span>
+                </p>
+                <p class="paragraph2">
+                  Compare
+                  <span class="icon"
+                    ><img src="../../assets/image/compicon.png" alt="compicon"
+                  /></span>
+                </p>
+              </div>
+            </div>
+            <div class="stars2">
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="txthover">
+          <img src="../../assets/image/car8.jpg" alt="car8" />
+          <div class="txtcontent">
+            <div class="stars">
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+            </div>
+            <div class="simpletxt">
+              <h3 class="name">Meclaren</h3>
+              <p>
+                "Lorem ipsum dolor sit amet, consectetur,<br />
+                sed do eiusmod tempor incididunt"
+              </p>
+              <h4 class="price">2500 &euro;</h4>
+              <button (click)="showReadMore()"  data-toggle="imagemodal" >READ MORE</button><br />
+              <div class="wishtxt">
+                <p class="paragraph1">
+                  Add to Wishlist
+                  <span class="glyphicon glyphicon-heart"></span>
+                </p>
+                <p class="paragraph2">
+                  Compare
+                  <span class="icon"
+                    ><img src="../../assets/image/compicon.png" alt="compicon"
+                  /></span>
+                </p>
+              </div>
+            </div>
+            <div class="stars2">
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+              <div class="glyphicon glyphicon-star"></div>
+            </div>
+          </div>
+        </div>
+      </div>-->
+  </div>
+</div>
